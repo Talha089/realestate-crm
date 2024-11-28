@@ -8,15 +8,9 @@ import { saveloginData } from '../actions/Auth';
 /*========== LOGIN FUNCTIONS =============*/
 
 function* login({ payload, history }) {
-  const { error, response } = yield call(postCall, { path: '/user/auth', payload });
+  const { error, response } = yield call(postCall, { path: '/user/signin', payload });
   if (error) EventBus.publish("error", error['response']['data']['message']);
   else if (response) {
-    // const decoded = jwt_decode(response["data"]["body"]["token"]);
-    // if (decoded["role"] !== "admin") {
-    //   EventBus.publish("error", "Can't login through User account ");
-    //   yield put({ type: "TOGGLE_LOGIN" });
-    //   return;
-    // }
     yield put(saveloginData(response['data']['body']));
     yield put({ type: "SET_USER_DETAILS", payload: response['data']['body']['user'] });
     EventBus.publish("success", response['data']['message'])
@@ -27,43 +21,25 @@ function* login({ payload, history }) {
 
 
 function* signup({ payload, history }) {
-  console.log('****** Saga history', history);
 
   const { error, response } = yield call(postCall, { path: '/user/signup', payload });
-  // if (error) {
-  //   failCallback()
-  //   EventBus.publish("error", error['response']['data']['message']);
-  // }
-  // else if (response) {
-  //   EventBus.publish("success", response['data']['message'])
-  //   successCallback();
-  // }
-
   if (error) {
     EventBus.publish("error", error['response']['data']['message']);
-  
   }
   else if (response) {
-    // const decoded = jwt_decode(response["data"]["body"]["token"]);
-    // if (decoded["role"] !== "admin") {
-    //   EventBus.publish("error", "Can't login through User account ");
-    //   yield put({ type: "TOGGLE_LOGIN" });
-    //   return;
-    // }
     yield put(saveloginData(response['data']['body']));
     yield put({ type: "SET_USER_DETAILS", payload: response['data']['body']['user'] });
     EventBus.publish("success", response['data']['message'])
-    console.log('***** sagaaaa success message')
-    setTimeout(() => history.push('/home'), 10000);
-    console.log('***** already pushed')
+    setTimeout(() => history.push('/home'), 1000);
 
   }
-  yield put({ type: "TOGGLE_LOGIN" });}
+  yield put({ type: "TOGGLE_LOGIN" });
+}
 
 /*========== DASHBOARD FUNCTIONS =============*/
 
 function* getDashboardStats() {
-  const { error, response } = yield call(getCall, '/user/stats');
+  const { error, response } = yield call(getCall, '/leads/stats');
   if (error) EventBus.publish("error", error['response']['data']['message']);
   else if (response) yield put({ type: "SET_DASHBOARD_STATS", payload: response['data']['body'] });
 };

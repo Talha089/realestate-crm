@@ -1,7 +1,7 @@
 import CountUp from 'react-countup';
 import { connect } from 'react-redux';
 import React, { useEffect } from "react";
-import { Line, Bar, Doughnut } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import VisibilitySensor from 'react-visibility-sensor';
 import { Card, CardHeader, CardBody, CardTitle, Row, Col, } from "reactstrap";
 
@@ -18,23 +18,25 @@ const Dashboard = (props) => {
     props.getDashboardStats()
   }, [])
 
-  let { total_jobs, hotlead_jobs, total_users, total_tasks, job_stats,
-    applied_job_stats, platform_job_stats } = props.dashboardStats;
+  let { total_jobs,
+    platform_job_stats,
+    total_leads,
+    new_leads,
+    contacted_leads,
+    qualified_leads,
+    lost_leads,
+    closed_leads,
+    leads_stats_0,
+    leads_stats_1
+  } = props.dashboardStats;
 
-  let new_jobs = {
+  let new_lead = {
     data: canvas => {
-      // let ctx = canvas.getContext("2d");
-
-      // let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
-      // gradientStroke.addColorStop(1, "rgba(64,170,244,0.5)");
-      // gradientStroke.addColorStop(0.4, "rgba(64,170,244,0.0)");
-      // gradientStroke.addColorStop(0, "rgba(64,170,244,0.2)"); //CPT PURPLE colors
 
       return {
-        labels: job_stats ? job_stats.map(el => el.date) : [],
+        labels: leads_stats_0 ? leads_stats_0.map(el => el.date) : [],
         datasets: [{
-          label: "Today Jobs",
+          label: "Today Leads",
           fill: true,
           // backgroundColor: gradientStroke,
           borderColor: "#40aaf4",
@@ -48,27 +50,20 @@ const Dashboard = (props) => {
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
           pointRadius: 4,
-          data: job_stats ? job_stats.map(el => el.count) : []
+          data: leads_stats_0 ? leads_stats_0.map(el => el.count) : []
         }]
       };
     },
     options: chart_options
   };
 
-  let applied_job_stats_data = {
+  let leads_stats_1_data = {
     data: canvas => {
-      // let ctx = canvas.getContext("2d");
-
-      // let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
-      // gradientStroke.addColorStop(1, "rgba(64,170,244,0.5)");
-      // gradientStroke.addColorStop(0.4, "rgba(64,170,244,0.0)");
-      // gradientStroke.addColorStop(0, "rgba(64,170,244,0.2)"); //CPT PURPLE colors
 
       return {
-        labels: applied_job_stats ? applied_job_stats.map(el => el.date) : [],
+        labels: leads_stats_1 ? leads_stats_1.map(el => el.date) : [],
         datasets: [{
-          label: "Today Jobs",
+          label: "Today Leads",
           fill: true,
           // backgroundColor: gradientStroke,
           borderColor: "#40aaf4",
@@ -82,47 +77,13 @@ const Dashboard = (props) => {
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
           pointRadius: 4,
-          data: applied_job_stats ? applied_job_stats.map(el => el.count) : []
+          data: leads_stats_1 ? leads_stats_1.map(el => el.count) : []
         }]
       };
     },
     options: chart_options
   };
 
-  let totalJobs = {
-    data: canvas => {
-      // let ctx = canvas.getContext("2d");
-
-      // let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
-      // gradientStroke.addColorStop(1, "rgba(64,170,244,0.5)");
-      // gradientStroke.addColorStop(0.4, "rgba(64,170,244,0.0)");
-      // gradientStroke.addColorStop(0, "rgba(64,170,244,0.2)"); //CPT PURPLE colors
-
-      return {
-        labels: platform_job_stats ? ['Linkedin', 'GlassDoor', 'Monster', 'Indeed'] : [],
-        datasets: [{
-          label: "Total Job Per Stack In a Day",
-          fill: true,
-          // backgroundColor: gradientStroke,
-          borderColor: "#40aaf4",
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          pointBackgroundColor: "#40aaf4",
-          pointBorderColor: "rgba(64,170,244,0)",
-          pointHoverBackgroundColor: "#40aaf4",
-          pointBorderWidth: 10,
-          pointHoverRadius: 4,
-          pointHoverBorderWidth: 15,
-          pointRadius: 4,
-          data: platform_job_stats ?
-            [platform_job_stats.Linkedin, platform_job_stats.GlassDoor, platform_job_stats.Monster, platform_job_stats.Indeed] : []
-        }]
-      };
-    },
-    options: chart_options
-  };
 
   return (
     <div className="content">
@@ -138,14 +99,14 @@ const Dashboard = (props) => {
                 </CardHeader>
                 <CardBody>
                   <div className='counter-start text-center' >
-                    <CountUp end={total_tasks}>
+                    <CountUp end={new_leads}>
                       {({ countUpRef, start }) => (
                         <VisibilitySensor onChange={start} delayedCall>
                           <span className='CountUp' ref={countUpRef} />
                         </VisibilitySensor>
                       )}
                     </CountUp>
-                    <p>Campaigns</p>
+                    <p>New Leads</p>
                   </div>
                 </CardBody>
               </Card>
@@ -159,14 +120,14 @@ const Dashboard = (props) => {
                 </CardHeader>
                 <CardBody>
                   <div className='counter-start text-center' >
-                    <CountUp end={total_users}>
+                    <CountUp end={closed_leads}>
                       {({ countUpRef, start }) => (
                         <VisibilitySensor onChange={start} delayedCall>
                           <span className='CountUp' ref={countUpRef} />
                         </VisibilitySensor>
                       )}
                     </CountUp>
-                    <p>Accounts</p>
+                    <p>Won Leads</p>
                   </div>
                 </CardBody>
               </Card>
@@ -187,7 +148,7 @@ const Dashboard = (props) => {
                         </VisibilitySensor>
                       )}
                     </CountUp>
-                    <p>Total Jobs</p>
+                    <p>Total Leads</p>
                   </div>
                 </CardBody>
               </Card>
@@ -201,14 +162,14 @@ const Dashboard = (props) => {
                 </CardHeader>
                 <CardBody>
                   <div className='counter-start text-center' >
-                    <CountUp end={hotlead_jobs}>
+                    <CountUp end={contacted_leads}>
                       {({ countUpRef, start }) => (
                         <VisibilitySensor onChange={start} delayedCall>
                           <span className='CountUp' ref={countUpRef} />
                         </VisibilitySensor>
                       )}
                     </CountUp>
-                    <p>Hot Leads</p>
+                    <p>Contacted Leads</p>
                   </div>
                 </CardBody>
               </Card>
@@ -219,18 +180,15 @@ const Dashboard = (props) => {
               <Card className="card-chart">
                 <CardHeader>
                   <CardTitle tag="h3" style={{ marginBottom: 0 }}>
-                    <div tag="h2">Fetched Jobs</div>
-                    <div className='row'>
-                      <i className="tim-icons icon-notes mx-3" />
-                      <h4 className="card-category mx-2">Fetched Jobs: {total_jobs}</h4>
-                    </div>
+                    <div tag="h2">All Leads of This Month</div>
+
                   </CardTitle>
                 </CardHeader>
                 <CardBody>
                   <div className="chart-area">
                     <Line
-                      data={new_jobs.data()}
-                      options={new_jobs.options}
+                      data={new_lead.data()}
+                      options={new_lead.options}
                     />
                   </div>
                 </CardBody>
@@ -242,39 +200,14 @@ const Dashboard = (props) => {
               <Card className="card-chart">
                 <CardHeader>
                   <CardTitle tag="h3" style={{ marginBottom: 0 }}>
-                    <div tag="h2">Total Apply’s Per Day</div>
-                    <div className='row'>
-                      <i className="tim-icons icon-notes mx-3" />
-                      <h4 className="card-category mx-2">Applied Jobs: {applied_job_stats ? applied_job_stats.length : 0}</h4>
-                    </div>
+                    <div tag="h2">New Leads of this Month</div>
                   </CardTitle>
                 </CardHeader>
                 <CardBody>
                   <div className="chart-area">
                     <Line
-                      data={applied_job_stats_data.data()}
-                      options={applied_job_stats_data.options}
-                    />
-                  </div>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col lg="6" md="12" xs="12">
-              <Card className="card-chart">
-                <CardHeader>
-                  <CardTitle tag="h3" style={{ marginBottom: 0 }}>
-                    <div tag="h2">Jobs By Platform</div>
-                    <div className='row'>
-                      <i className="tim-icons icon-notes mx-3" />
-                      <h4 className="card-category mx-2">Total Jobs: {total_jobs}</h4>
-                    </div>
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>
-                  <div className="chart-area">
-                    <Bar
-                      data={totalJobs.data()}
-                      options={totalJobs.options}
+                      data={leads_stats_1_data.data()}
+                      options={leads_stats_1_data.options}
                     />
                   </div>
                 </CardBody>
@@ -312,7 +245,7 @@ let chart_options = {
   responsive: true,
   scales: {
     yAxes: [{
-      barPercentage: 0.6,
+      barPercentage: 0.9,
       gridLines: {
         drawBorder: false,
         color: "rgba(64, 170, 244, 0.0)",

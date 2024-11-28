@@ -10,6 +10,16 @@ var initialState =
   isAdminPassword: true,
 
   dashboardStats: {
+    total_leads: 0,
+    new_leads: 0,
+    contacted_leads: 0,
+    qualified_leads: 0,
+    lost_leads: 0,
+    closed_leads: 0,
+    leads_stats_0: 0,
+    leads_stats_1: 0,
+
+
     total_jobs: 2500,
     total_users: 0,
     total_tasks: 0,

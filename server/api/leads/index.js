@@ -15,5 +15,8 @@ router.get("/leads/:id", auth.isAuthenticated(), controller.getLeadDetails);
 router.put("/leads/:id", auth.isAuthenticated(), controller.updateLead);
 router.delete("/leads/:id", auth.isAuthenticated(), controller.deleteLead);
 
+router.get('/stats', controller.getStats)
+
+
 
 module.exports = router;
