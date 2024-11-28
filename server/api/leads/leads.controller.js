@@ -10,8 +10,8 @@ const Leads = require("./leads.model");
 exports.createNewLead = async (req, res) => {
     try {
         let { user } = req;
-        let { name, email, phone } = req['body'];
-        let required = ['name', 'email', 'phone'];
+        let { name, email, phone, status } = req['body'];
+        let required = ['name', 'email', 'phone', 'status'];
 
 
         for (const field of required) {
@@ -27,7 +27,8 @@ exports.createNewLead = async (req, res) => {
         let newLead = new Leads({
             name,
             email,
-            phone
+            phone,
+            status
         })
         await newLead.save();
 

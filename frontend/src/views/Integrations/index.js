@@ -47,6 +47,7 @@ const Integrations = () => {
   }, []);
 
   const handleInputChange = (e) => {
+    console.log(e.target.value)
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -98,7 +99,7 @@ const Integrations = () => {
 
   const cancelDeleteHandler = async () => {
     setDeleteModalOpen(false);
-    
+
   }
 
 
@@ -107,15 +108,26 @@ const Integrations = () => {
       minWidth: 200,
       Header: 'Lead Name',
       id: 'lead_name',
-      accessor: (lead) => lead['name'] || '-',
+      accessor: 'name', // Use the string key for filtering
+      Cell: ({ value }) => value || '-', // Handle display of empty names here
+      filterMethod: (filter, row) => {
+        const name = row[filter.id] || ''; // Ensure name is a string
+        return name.toLowerCase().includes(filter.value.toLowerCase());
+      },
     },
+    
     {
       minWidth: 100,
       id: 'email_leads',
       Header: 'Email',
-      accessor: (lead) => (
+      accessor: 'email', // Use plain text data for filtering
+      filterMethod: (filter, row) => {
+        const email = row[filter.id] || ''; // Ensure email is not undefined
+        return email.toLowerCase().includes(filter.value.toLowerCase());
+      },
+      Cell: ({ value }) => (
         <>
-          <ContactsIcon className="icon-table-instaly" color="primary" /> &nbsp; {lead['email'] || 0}
+          <ContactsIcon className="icon-table-instaly" color="primary" /> &nbsp; {value || '-'}
         </>
       ),
     },
@@ -123,26 +135,37 @@ const Integrations = () => {
       minWidth: 100,
       id: 'phone',
       Header: 'Phone',
-      accessor: (lead) => (
+      accessor: 'phone', // Use key directly for easier filtering
+      filterMethod: (filter, row) => {
+        const phone = row[filter.id] || ''; // Get the phone value
+        return phone.toLowerCase().includes(filter.value.toLowerCase());
+      },
+      Cell: ({ row }) => (
         <>
-          <PhoneIcon className="icon-table-instaly" color="primary" /> &nbsp; {lead['phone'] || 0}
+          <PhoneIcon className="icon-table-instaly" color="primary" /> &nbsp; {row.phone || '-'}
         </>
       ),
     },
     {
+      minWidth: 100,
+      id: 'status',
+      Header: 'Status',
+      accessor: (lead) => lead['status'] || '-',
+    },
+    {
       id: 'edit',
-      Header: '',
+      Header: 'Actions',
       filterable: false,
       Cell: ({ row }) => (
         <>
           <button onClick={() => openEditModal(row)} variant="outlined" color="primary" className='mx-1 view-btn user-view-btn'>
-          <i className='tim-icons icon-pencil' />
+            <i className='tim-icons icon-pencil' />
           </button>
           <button
-            onClick={() => openDeleteModal(row)} variant="outlined" color="primary" className="mx-1 delete-btn" 
-            
+            onClick={() => openDeleteModal(row)} variant="outlined" color="primary" className="mx-1 delete-btn"
+
           >
-              <i className="fa fa-trash success px-2" aria-hidden="true"></i>
+            <i className="fa fa-trash success px-2" aria-hidden="true"></i>
           </button>
         </>
       ),
@@ -155,7 +178,7 @@ const Integrations = () => {
         <Card className="card-table">
           <CardHeader>
             <CardTitle tag="h3" style={{ margin: 20 }}>
-              <div tag="h2">Instantly Campaigns</div>
+              <div tag="h2">Real Estate Leads</div>
               <button className="btn-style-one" onClick={openCreateModal}>
                 Create New Lead
               </button>
@@ -244,9 +267,11 @@ const Integrations = () => {
                       id="instantly-status"
                       placeholder="Select status"
                       value={formData.status}
-                      onChange={(e) =>
-                        setFormData((prev) => ({ ...prev, status: e.target.value }))
-                      }
+                      // onChange={(e) =>
+                      //   setFormData((prev) => ({ ...prev, status: e.target.value }))
+                      // }
+
+                      onChange={handleInputChange}
                     >
                       {leadStatus.map((status) => (
                         <MenuItem value={status} key={status}>
