@@ -1,6 +1,5 @@
 import Users from "./views/Users/index.js";
 import Logout from "./views/Logout/index.js";
-import Settings from "./views/Settings/index.js";
 import Dashboard from "./views/Dashboard/index.js";
 import Integrations from "./views/Integrations/index.js";
 

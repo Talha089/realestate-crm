@@ -10,7 +10,6 @@ import Login from "./views/Login/index.js";
 import Signup from "./views/Signup/index.js";
 
 import { logout } from './store/actions/Auth';
-import { getMe } from './store/actions/User.js';
 import PrivateRoute from './store/PrivateRoute';
 
 import './App.css'
@@ -24,7 +23,7 @@ export const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getMe());
+    // dispatch(getMe());
     EventBus.on('error', (e) => toast.error(e, {position: toast['POSITION']['BOTTOM_CENTER']}));
     EventBus.on('success', (e) => toast.success(e, {position: toast['POSITION']['BOTTOM_CENTER']}));
     EventBus.on("tokenExpired", () => dispatch(logout()));
