@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* font-family: 'Lato', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+.login-page {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/img/login-bg.jpg');
+  background-color: #fff;
+  box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+  background-size: cover;
+}
+.auto-container {
+  position: static;
+  max-width: 80%;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+.login-page .row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  height: 100vh;
+}
+.login-page .logo-area {
+  width: 142px;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+.login-page .left-img-area {
+  position: relative;
+  width: 51%;
+}
+.login-page .login-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-page .login-area .login-form {
+  padding: 49px 80px;
+  width: 100%;
+  background: #fff;
+  box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+  border-radius: 40px;
+  position: relative;
+}
+
+.login-page .login-area .login-form .login-title {
+  color: #000000;
+  text-align: center;
+  font-size: 28px;
+}
+
+.login-page .login-area .login-form .validator-form .MuiFormControl-marginDense {
+  width: 100%;
+}
+
+.login-page .login-area .login-form .validator-form .login-input-fields .MuiFormLabel-root.Mui-focused {
+  color: #40aaf4;
+}
+
+.login-page .login-area .login-form .validator-form .login-input-fields .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #6c757d;
+
+}
+
+.login-page .login-area .login-form .validator-form .login-input-fields .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #40aaf4;
+}
+
+.login-page .login-area .login-form .validator-form .login-input-fields .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #40aaf4;
+}
+
+.login-page .login-area .login-form .validator-form .login-btn {
+  width: 70%;
+  background-color: #40aaf4 !important;
+  padding: 7px !important;
+}
+.btn-style-one {
+  position: relative;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  border: 1px solid rgba(73, 174, 253, 0.4);
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  padding: 17px 50px;
+  background: #49AEFD;
+  box-shadow: 2px 4px 10px rgba(73, 174, 253, 0.4), inset 2px 2px 3px #58BFFB, inset -4px -4px 8px #368BF3;
+  border-radius: 2em;
+  transform: perspective(500px) rotateY(0deg);
+  text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 0 5px 368BF3;
+  transition: 0.5s;
+  z-index: 9;
+  overflow: hidden;
+}
+.btn-style-one::before {
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+background: linear-gradient(to right, transparent, white, transparent);
+left: -100%;
+transition: 0.5s;
+}
+
+.btn-style-one:hover::before {
+left: 100%;
+}
+
+.btn-style-one:hover {
+  background: #FFFFFF;
+  box-shadow: 15px 15px 30px rgba(180, 210, 255, 0.1), inset 8px 8px 16px rgba(223, 236, 255, 0.7), inset -15px -15px 30px rgba(188, 215, 255, 0.6);
+  color: #368BF3;
+  transform: perspective(500px) rotateY(15deg);
+  text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 0 0 2px #49AEFD;
+}
+
+.btn-style-one .icon {
+  position: relative;
+  padding-left: 10px;
+  top: 0px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-style-one:hover .icon svg path {
+  fill: #368BF3;
+}
+
+.btn-style-two {
+  position: relative;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  border: 1px solid rgba(73, 174, 253, 0.4);
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  padding: 17px 50px;
+  background: #909CB1;
+  box-shadow: 2px 4px 10px rgba(73, 174, 253, 0.4), inset 2px 2px 3px #909CB1, inset -4px -4px 8px #909CB1;
+  border-radius: 2em;
+  transform: perspective(500px) rotateY(0deg);
+  text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 0 5px 368BF3;
+  transition: 0.5s;
+  z-index: 9;
+  overflow: hidden;
+}
+.btn-style-two::before {
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+background: linear-gradient(to right, transparent, white, transparent);
+left: -100%;
+transition: 0.5s;
+}
+
+.btn-style-two:hover::before {
+left: 100%;
+}
+
+.btn-style-two:hover {
+  background: #FFFFFF;
+  box-shadow: 15px 15px 30px rgba(180, 210, 255, 0.1), inset 8px 8px 16px rgba(223, 236, 255, 0.7), inset -15px -15px 30px rgba(188, 215, 255, 0.6);
+  color: #909CB1;
+  transform: perspective(500px) rotateY(15deg);
+  text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 0 0 2px #909CB1;
+}
+
+.btn-style-two .icon {
+  position: relative;
+  padding-left: 10px;
+  top: 0px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-style-two:hover .icon svg path {
+  fill: #368BF3;
+}
+.login-page .login-area .login-page-logo {
+  width: 50%;
+  padding: 30px 50px;
+  border-radius: 20px;
+  border: 2px solid #1e1e2f;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+}
+
+.login-page .login-area .login-form h2 {
+  color: #293A49;
+  font-size: 31px;
+  font-family: Lato;
+  font-weight: 700;
+  line-height: 33.60px;
+  margin-bottom: 40px;
+}
+.login-page .login-area .login-form:before {
+  left: -5px;
+  top: -5px;
+  background: #49aefd;
+  box-shadow: 2px 4px 10px rgba(26,127,206,.6), inset 2px 2px 3px #58bffb, inset -4px -4px 8px #368bf3;
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  border-radius: 24px 0;
+  transition: all .3s ease-in-out;
+}
+
+.login-page .login-area .login-form:after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  border-radius: 24px 0;
+  transition: all .3s ease-in-out;
+  right: -5px;
+  bottom: -5px;
+  background: #f2f7ff;
+  box-shadow: -2px 0 10px rgba(26,127,206,.4), inset 2px 2px 3px #e3eeff, inset -4px -4px 8px #e1edff;
+  z-index: 1;
+}
+
+.login-page .login-area .login-form .validator-form {
+  position: relative;
+}
+
+.login-page .login-area .login-form .validator-form .group-form {
+  text-align: left;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.login-page .login-area .login-form .validator-form .group-form label {
+  color: black;
+  font-size: 16px;
+  font-family: Lato;
+  font-weight: 700;
+  line-height: 19.60px;
+  word-wrap: break-word;
+}
+.login-page .login-area .login-form .validator-form .group-form.checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.login-page .login-area .login-form .validator-form .group-form.checkbox-group .forget-pass {
+  color: #49AEFD;
+  font-size: 15px;
+  font-family: Lato;
+  font-weight: 700;
+  line-height: 14px;
+  word-wrap: break-word;
+  transition: all 0.3s ease-in-out;
+}
+.login-page .login-area .login-form .validator-form .group-form.checkbox-group .forget-pass:hover{
+  color: black;
+}
+.login-page .login-area .login-form .validator-form .group-form  .MuiInputBase-root {
+  border-radius: 0;
+  border: none;
+}
+
+.login-page .login-area .login-form .validator-form .group-form .MuiInputBase-root fieldset {
+  border: none !important;
+}
+
+.login-page .login-area .login-form .validator-form .group-form .MuiInputBase-root input {
+  width: 100%;
+  background: #f2f7ff;
+  box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+  border-radius: 35px;
+  padding: 14px 25px;
+  height: 30px;
+  color: rgba(0, 0, 0, 0.80);
+  font-size: 16px;
+  font-family: Lato;
+  font-weight: 700;
+  line-height: 16.80px;
+  word-wrap: break-word;
+}
+.login-page .login-area .login-form .validator-form .MuiFormControl-marginDense p {
+  position: absolute;
+  bottom: -23px;
+  color: #f44336 !important;
+}
+.login-page .left-img-area h2 {
+  color: #293A49;
+  font-size: 35px;
+  font-family: Lato;
+  font-weight: 700;
+  line-height: 39.20px;
+  word-wrap: break-word;
+  margin-top: 30px;
+}
+
+.login-page .left-img-area p {
+  color: rgba(41, 58, 73, 0.60);
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.login-page .login-area .login-form .validator-form .group-form .MuiCheckbox-colorSecondary.Mui-checked {
+  color: #368BF3 !important;
+}
+.validator-form .group-form .icon-show,
+.validator-form .group-form .icon-hide {
+  position: absolute;
+  top: 47px;
+  right: 18px;
+  background-color: transparent;
+  border: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.login-page .login-area .login-form .validator-form .group-form .icon-show,
+.login-page .login-area .login-form .validator-form .group-form .icon-hide{
+  top: 52px;
+}
+.validator-form .group-form .icon-show svg,
+.validator-form .group-form .icon-hide svg {
+  width: 24px;
+  fill: rgba(0, 0, 0, 0.30);
+}
+@media(max-width: 1450px) {
+  .auto-container {
+    max-width: 90%;
+  }
+  .login-page .login-area .login-form{
+    padding: 30px 47px;
+  }
+}
+@media(max-width: 600px){
+  .login-page .row {
+      margin-right: 0px !important;
+      margin-left: 0px !important;
+      height: 100%;
+  }
+  .login-page{
+    padding-bottom: 30px;
+  }
+}
+@media(max-width: 600px) {
+  .auto-container {
+    max-width: 90%;
+    padding: 0 15px;
+  }
+  .login-page .left-img-area {
+    position: relative;
+    width: 51%;
+    margin: 90px 0 40px;
+  }
+  .login-page .login-area .login-form {
+    padding: 12px 19px;
+  }
+  .login-page {
+      padding-bottom: 100px;
+  }
+}
+
+/* ========== Responsive =========== */
+
+
+@media screen and (max-width: 425) {
+  .login-page .login-area {
+    margin-top: 15% !important;
+  }
+}
+
+.authentication-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authentication-group input {
+    width: 15px !important;
+    height: 80px;
+    border-radius: 10px !important;
+    margin: 0 9px;
+    text-align: center;
+    font-size: 20px;
+}

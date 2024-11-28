@@ -1,0 +1,362 @@
+.card-tabs-form {
+    margin: 0 auto;
+}
+.card-tabs-form .validator-form {
+    position: relative;
+}
+
+.card-tabs-form .validator-form .group-form {
+    text-align: left;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.card-tabs-form .validator-form .group-form label {
+    color: black;
+    font-size: 16px;
+    font-family: Lato;
+    font-weight: 700;
+    line-height: 19.60px;
+    word-wrap: break-word;
+}
+.card-tabs-form .validator-form .group-form.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.card-tabs-form .validator-form .group-form.checkbox-group .forget-pass {
+    color: #49AEFD;
+    font-size: 15px;
+    font-family: Lato;
+    font-weight: 700;
+    line-height: 14px;
+    word-wrap: break-word;
+    transition: all 0.3s ease-in-out;
+}
+.card-tabs-form .validator-form .group-form.checkbox-group .forget-pass:hover{
+    color: black;
+}
+.card-tabs-form .validator-form .group-form  .MuiInputBase-root {
+    border-radius: 0;
+    border: none;
+}
+
+.card-tabs-form .validator-form .group-form .MuiInputBase-root fieldset {
+    border: none !important;
+}
+
+.card-tabs-form .validator-form .group-form .MuiInputBase-root input {
+    width: 100%;
+    background: #f2f7ff;
+    box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+    border-radius: 35px;
+    padding: 14px 25px;
+    height: 21px;
+    color: rgba(0, 0, 0, 0.80);
+    font-size: 16px;
+    font-family: Lato;
+    font-weight: 700;
+    line-height: 16.80px;
+    word-wrap: break-word;
+}
+.card-tabs-form h2 {
+    color: #293A49;
+    font-size: 31px;
+    font-family: Lato;
+    font-weight: 700;
+    line-height: 33.60px;
+    margin-bottom: 34px;
+}
+.card-tabs-form .group-auhuntcator {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-tabs-form .group-auhuntcator p {
+    font-size: 18px;
+}
+
+.card-tabs-form .group-auhuntcator .MuiSwitch-root .MuiSwitch-colorSecondary.Mui-checked {
+    color: #49aefd !important;
+}
+
+.card-tabs-form .group-auhuntcator .MuiSwitch-root .MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+    background-color: #49aefd !important;
+}
+
+.new-user-modal .modal-content .content-area .group-form .authentication-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-user-modal .modal-content .content-area .group-form .authentication-group input {
+    width: 30px !important;
+    height: 80px;
+    border-radius: 10px;
+    margin: 0 9px;
+    text-align: center;
+    font-size: 20px;
+}
+.card-tabs-form {
+    position: relative;
+}
+
+.card-tabs-form .box-settings {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px 25px;
+}
+
+.card-tabs-form .box-settings .left-area {
+    position: relative;
+    width: 50%;
+    padding-right: 65px;
+}
+
+.card-tabs-form .box-settings .left-area h3 {
+    color: #293A49;
+    font-size: 22px;
+    font-family: Lato;
+    font-weight: 600;
+    line-height: 33.60px;
+    margin-bottom: 12px;
+}
+
+.card-tabs-form .box-settings .left-area  p {
+    font-size: 18px;
+}
+.card-tabs-form .box-settings .right-area {
+    position: relative;
+    width: 50%;
+    padding: 0 25px;
+}
+
+.card-tabs-form .box-settings .right-area:before {
+    content: "";
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.card-tabs-form .box-settings .right-area .group-form button {
+    margin: 0 10px;
+    padding: 10px 35px;
+}
+
+.card-tabs-form .box-settings .right-area .group-form button.btn-style-one {
+    padding: 11px 35px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group,
+.card-tabs-form .box-settings .right-area .user-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group label,
+.card-tabs-form .box-settings .right-area .user-group label {
+    color: black;
+    font-size: 16px;
+    font-family: Lato;
+    font-weight: 700;
+    line-height: 19.60px;
+    word-wrap: break-word;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data,
+.card-tabs-form .box-settings .right-area .user-group .user-data{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data h3,
+.card-tabs-form .box-settings .right-area .user-group .user-data h3 {
+    font-size: 17px;
+    margin-bottom: 0;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data h3 .icon,
+.card-tabs-form .box-settings .right-area .user-group .user-data h3 .icon {
+    padding-right: 9px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data .btn-style-one,
+.card-tabs-form .box-settings .right-area .user-group .user-data .btn-style-one {
+    padding: 6px 15px;
+    min-width: 125px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data .MuiSwitch-root,
+.card-tabs-form .box-settings .right-area .user-group .user-data .MuiSwitch-root {
+    height: 48px;
+    width: 72px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data .MuiSwitch-root .MuiSwitch-switchBase,
+.card-tabs-form .box-settings .right-area .user-group .user-data .MuiSwitch-root .MuiSwitch-switchBase {
+    color: #A3B4CC;
+    top: 5px;
+    left: 5px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data .MuiSwitch-root .MuiSwitch-track,
+.card-tabs-form .box-settings .right-area .user-group .user-data .MuiSwitch-root .MuiSwitch-track {
+    background-color: #f0f8fd;
+    border-radius: 35px;
+    box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb,
+.card-tabs-form .box-settings .right-area .user-group .user-data .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb {
+    width: 25px;
+    height: 20px;
+    border-radius: 13px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data .MuiSwitch-root .MuiSwitch-colorSecondary.Mui-checked,
+.card-tabs-form .box-settings .right-area .user-group .user-data .MuiSwitch-root .MuiSwitch-colorSecondary.Mui-checked {
+    color: #48ACFC;
+}
+.card-tabs-form .box-settings .left-area .user-group .user-data .input-group label,
+.card-tabs-form .box-settings .right-area .user-group .user-data .input-group label {
+    margin-right: 5px;
+}
+
+.card-tabs-form .box-settings .left-area .user-group .user-data .input-group input,
+.card-tabs-form .box-settings .right-area .user-group .user-data .input-group input {
+    background-color: transparent;
+    border: none;
+    color: #00000099;
+    width: 250px;
+    position: relative;
+    top: -1px;
+}
+
+.card-table .tabs-area {position: relative;}
+
+.card-table .tabs-area .nav-tabs {
+    list-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #909CB1;
+    border-radius: 30px;
+    padding: 0;
+    border: none !important;
+    margin: 0;
+}
+
+.card-table .tabs-area .nav-tabs .nav-item {
+    position: relative;
+    margin-bottom: 0;
+}
+.card-tabs-form .box-settings .right-area .user-group .user-data .input-group {}
+
+.card-tabs-form .box-settings .right-area .user-group .user-data .input-group .MuiFormControl-marginDense {
+    margin: 0;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedStart.MuiOutlinedInput-adornedStart.MuiInputBase-marginDense.MuiOutlinedInput-marginDense {}
+
+.card-tabs-form .box-settings .right-area .user-group .user-data .input-group .MuiFormControl-marginDense fieldset {
+    width: 100%;
+    background: #f2f7ff;
+    box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+    border-radius: 35px;
+    height: 57px;
+    color: rgba(0, 0, 0, 0.80);
+    font-size: 16px;
+    font-family: Lato;
+    font-weight: 700;
+    line-height: 16.80px;
+    word-wrap: break-word;
+    border: none;
+}
+
+.card-tabs-form .box-settings .right-area .user-group .user-data .input-group .MuiFormControl-marginDense input {
+    padding: 17px 0;
+    z-index: 3;
+}
+.card-tabs-form .box-settings .right-area .user-group .user-data.phone-data {
+    display: block;
+}
+.card-tabs-form .box-settings .right-area .user-group .user-data .input-group .MuiPhoneNumber-positionStart {
+    position: relative;
+    z-index: 2;
+}
+.card-table .tabs-area .nav-tabs .nav-item .nav-link {
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 7px 25px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card-table .tabs-area .nav-tabs .nav-item .nav-link:hover, .card-table .tabs-area .nav-tabs li .nav-link.active {
+    background-color: #49AEFD;
+    border-radius: 30px;
+}
+@media(max-width: 1450px){
+    .card-tabs-form .box-settings .left-area .user-group .user-data .btn-style-one, .card-tabs-form .box-settings .right-area .user-group .user-data .btn-style-one {
+        padding: 6px 9px;
+        min-width: 88px;
+        font-size: 13px;
+    }
+    .card-tabs-form .box-settings .left-area .user-group .user-data h3, .card-tabs-form .box-settings .right-area .user-group .user-data h3 {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .card-tabs-form .box-settings {
+        padding: 25px 0;
+    }
+}
+@media(max-width: 1199px){
+    .card-tabs-form .box-settings .left-area,
+    .card-tabs-form .box-settings .right-area {
+        position: relative;
+        width: 100%;
+        padding: 0;
+    }
+    .card-tabs-form .box-settings .right-area:before{
+        display: none;
+    }
+}
+@media(max-width: 600px){
+    .card-table .tabs-area .nav-tabs .nav-item .nav-link {
+        font-size: 12px;
+        padding: 7px 13px;
+    }
+    .card-tabs-form .box-settings .left-area .user-group .user-data, .card-tabs-form .box-settings .right-area .user-group .user-data{
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    .card-tabs-form .box-settings .left-area .user-group .user-data h3, .card-tabs-form .box-settings .right-area .user-group .user-data h3{
+        width: 100%;
+    }
+}
+@media(max-width: 480px){
+    .card-table .card-header .card-title {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .card .card-header .card-title div[tag="h2"] {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 11px;
+    }
+}

@@ -1,0 +1,75 @@
+.dial-pad {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 0 auto;
+  zoom: 0.8;
+}
+.rdw-fontsize-option,
+.rdw-dropdownoption-default,
+.rdw-dropdownoption-default {
+  color: #00000090;
+}  
+.dial-pad .phone-number {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  height: 3rem;
+  padding: 5px 0;
+  border: 1px solid rgba(211, 211, 211, 1);
+  border-radius: 52px;
+}
+  
+  .dial-pad .digits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+  
+.dial-pad .digits > div.digit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  width: 50px;
+  height: 50px;
+  margin: 4px 21px;
+  background-color: rgba(211, 211, 211, 0.1);
+  border: 1px solid rgba(211, 211, 211, 1);
+  border-radius: 50%;
+}
+  
+.dial-pad .digits > div.digit .subset {
+  color: grey;
+  font-size: 0.625rem;
+  font-weight: 600;
+  height: 0.375rem;
+  position: relative;
+  top: -13px;
+}
+  
+  .dial-pad .controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 0;
+    display: none;
+  }
+  
+  .dial-pad .controls > div.call {
+    margin: 16px;
+    width: 72px;
+    height: 72px;
+  }
+  
+  .dial-pad .controls > div.backspace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    width: 72px;
+    height: 72px;
+  }
+  

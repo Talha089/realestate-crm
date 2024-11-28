@@ -1,0 +1,1147 @@
+.active-status {
+    color: #0ef566 !important;
+}
+.completed-status {
+    color: #0e94f4 !important;
+}
+.paused-status {
+    color: #f4d20e !important;
+}
+.call-button {
+    padding: 2px 14px !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    border-radius: 15px !important;
+}
+.contact-modal-header {
+    display: grid;
+    grid-gap: 1rem;
+    margin: 0px 5px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 10px 0px;
+    text-shadow: 0 0 black;
+    grid-template-columns: repeat(5, auto);
+}
+.contact-modal-row {
+    display: grid;
+    padding: 10px;
+    grid-gap: 1rem;
+    margin: 10px 5px;
+    border-radius: 10px;
+    text-align: center;
+    text-shadow: 0 0 black;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.fs0-5rem {
+    font-size: 0.5rem;
+}
+.fs0-75rem {
+    font-size: 0.75rem;
+}
+.fs1rem {
+    font-size: 1rem;
+}
+.right-template-company {
+    background-color: #fff;
+    box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+    padding: 30px 22px 40px;
+    z-index: 9;
+    transition: all 0.8s ease-in-out;
+}
+.right-template-company.active{
+    right: 0;
+}
+.right-template-company .content-area {
+    position: relative;
+    padding-right: 0;
+    height: 92vh;
+}
+
+.right-template-company .table-area table tbody tr td .call-button .tooltiptext {
+    min-width: 140px;
+    background-color: #49aefd;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -2px;
+    left: -174px;
+    margin-left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    visibility: hidden;
+    z-index: 999;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 20%);
+    padding: 7px;
+    font-size: 13px;
+}
+
+.right-template-company .table-area table tbody tr td .call-button .tooltiptext:before {
+    content: "";
+    position: absolute;
+    top: 36%;
+    right: -15px;
+    margin-left: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #49aefd;
+}
+.right-template-company .table-area table tbody tr td .call-button:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* .right-template-company:before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100.5%;
+    height: 100%;
+    background-color: #00000030;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+} */
+.modal {
+    background-color: #00000030;
+    backdrop-filter: blur(5px);
+}
+.right-template-company .close-btn {
+    background-color: #49aefd;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: -18px;
+    left: -36px;
+    z-index: 999;
+    display: block;
+    padding: 0;
+}
+.right-template-company .close-btn::before {
+    position: relative;
+    right: -10px;
+    top: 9px;
+}
+.right-template-company .close-btn .close {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+    opacity: 0 !important;
+}
+.right-template-company .content-area .company-info {
+    padding: 15px;
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    zoom: 0.8;
+}
+
+.right-template-company .content-area .company-info h2 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.right-template-company .content-area .company-info h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.right-template-company .content-area .company-info p {
+    font-size: 14px;
+}
+.right-template-company .table-area table thead {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset !important;
+}
+button.MuiButtonBase-root {
+    font-size: 10px;
+}
+.editorClassName.rdw-editor-main {
+    min-height: 205px;
+    padding: 0 15px;
+}
+.right-template-company .table-area {
+    margin: 20px 0;
+    position: relative;
+    zoom: 0.8;
+}
+
+.right-template-company .table-area table {
+    width: 100%;
+    border-radius: 11px;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.right-template-company .table-area table thead tr {
+    position: relative;
+}
+
+.right-template-company .table-area table thead tr th {
+    padding: 10px;
+    border-right: 1px solid #cccccc60;
+    text-align: center;
+    font-size: 12px;
+}
+
+.right-template-company .table-area table thead tr th:nth-child(1) {
+    text-align: left;
+}
+
+.right-template-company .table-area table tbody {
+    position: relative;
+}
+
+.right-template-company .table-area table tbody tr {
+    border-bottom: solid 1px rgba(0,0,0,0.05);
+}
+
+.right-template-company .table-area table tbody tr td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-right: 1px solid rgba(0,0,0,0.03);
+}
+.right-template-company .content-area .company-info p .icon-btn {
+    border: none;
+    background-color: transparent;
+}
+.right-template-company .table-area table tbody tr td:last-child {
+    border: none;
+    width: 99px;
+    text-align: center;
+    margin: 0 auto;
+}
+.right-template-company .table-area table tbody tr td:first-child {
+    text-align: left;
+}
+.right-template-company .table-area table thead {
+    width: 100%;
+    height: 100%;
+    background: white;
+    box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset !important;
+    border-radius: 5px;
+}
+.call-button.btn.btn-primary svg {
+    color: #fff;
+    width: 16px;
+}
+.right-template-company .table-area table tbody tr td .call-button {
+    padding: 1px !important;
+    display: block;
+    width: 50px;
+    text-align: center;
+    margin: 0 auto;
+    background: #49aefd !important;
+    overflow: visible;
+    zoom: 0.7;
+}
+
+.right-template-company .table-area table tbody tr td .call-button svg {
+    width: 17px;
+}
+.right-template-company .content-area .notpad-area{
+    position: relative;
+}
+.right-template-company .content-area .note-area {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: block;
+}
+.right-template-company .content-area .notpad-area .note-area,
+.right-template-company .content-area .notpad-area.active .note-area.style-two{
+    display: block;
+}
+.right-template-company .content-area .notpad-area .note-area.style-two,
+.right-template-company .content-area .notpad-area.active .note-area {
+    display: none;
+}
+.right-template-company .content-area .note-area .top-header-sec,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec {
+    background-color: #fff;
+    border: 0;
+    position: relative;
+    width: 100%;
+    box-shadow: -15px -15px 30px rgba(188.06, 214.84, 255, 0.60) inset;
+    border-radius: 10px;
+    padding: 3px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-template-company .content-area .note-area .top-header-sec .left-area,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .left-area{
+    position: relative;
+}
+
+.right-template-company .content-area .note-area .top-header-sec .left-area h4,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .left-area h4 {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.right-template-company .content-area .note-area .top-header-sec .left-area p,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .left-area p {
+    font-size: 9px;
+    margin-bottom: 0;
+}
+
+.right-template-company .content-area .note-area .top-header-sec .right-area,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .right-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.right-template-company .content-area .note-area .top-header-sec .right-area .timer,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .right-area .timer{
+    color: #293a49;
+    margin-bottom: 0;
+    margin-right: 15px;
+    font-size: 11px;
+}
+
+.right-template-company .content-area .note-area .top-header-sec .right-area .call-button.btn.btn-secondary,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .right-area .call-button.btn.btn-secondary{
+    background: #49aefd !important;
+    width: 58px;
+    padding: 5px 6px !important;
+}
+.right-template-company .content-area .note-area .record-area,
+.dialpad-page .content-area .notpad-area .record-area{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.right-template-company .content-area .note-area .top-header-sec .right-area .call-button.btn.btn-secondary svg,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .right-area .call-button.btn.btn-secondary svg {
+    width: 15px;
+    height: 15px;
+}
+.right-template-company .content-area .note-area .record-area .mute-btn,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn{
+    background-color: transparent;
+    border: none;
+}
+
+.right-template-company .content-area .note-area .record-area .mute-btn .icon,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn .icon {
+    background-color: #fff;
+    border: 1px solid #00000060;
+    width: 27px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 8px;
+    height: 27px;
+    border-radius: 50%;
+}
+.right-template-company .content-area .note-area .record-area .mute-btn .icon svg,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn .icon svg {
+    width: 22px;
+    position: relative;
+    top: 5px;
+}
+
+.right-template-company .content-area .note-area .record-area .mute-btn .icon svg#keypad,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn .icon svg#keypad{
+    width: 22px;
+    top: 8px;
+    opacity: 0.7;
+}
+.right-template-company .content-area .note-area .record-area,
+.dialpad-page .content-area .notpad-area .record-area{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 15px;
+}
+
+.right-template-company .content-area .note-area .record-area .mute-btn,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 11px;
+}
+
+.right-template-company .content-area .note-area .record-area .mute-btn .icon,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn .icon{
+    background-color: #fff;
+    border: 1px solid #00000060;
+    width: 27px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 8px;
+    height: 27px;
+    border-radius: 50%;
+    line-height: 23px;
+}
+
+.right-template-company .content-area .note-area .record-area .mute-btn .icon svg,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn .icon svg {
+    width: 16px;
+    position: relative;
+    top: 1px;
+}
+
+.right-template-company .content-area .note-area .record-area .mute-btn .icon svg#keypad,
+.dialpad-page .content-area .notpad-area .record-area .mute-btn .icon svg#keypad {
+    width: 13px;
+    top: 1px;
+    opacity: 0.7;
+}
+
+.right-template-company .content-area .note-area .record-area .left-area,
+.dialpad-page .content-area .notpad-area .record-area .left-area{
+    display: flex;
+    align-items: center;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area,
+.dialpad-page .content-area .notpad-area .record-area .right-area {
+    display: flex;
+    align-items: center;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .dropdown,
+.dialpad-page .content-area .notpad-area .record-area .right-area .dropdown{
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 0 10px;
+    margin: 0 10px;
+}
+.right-template-company .content-area .note-area .record-area .right-area .dropdown .btn.dropdown-toggle,
+.dialpad-page .content-area .notpad-area .record-area .right-area .dropdown .btn.dropdown-toggle{
+    background-color: transparent;
+    background: none !important;
+    border: none !important;
+    color: #000;
+    font-size: 12px;
+    position: relative;
+    padding: 4px 16px;
+    font-size: 10px;
+}
+.right-template-company .content-area .note-area .record-area .right-area .dropdown .btn.dropdown-toggle p,
+.dialpad-page .content-area .notpad-area .record-area .right-area .dropdown .btn.dropdown-toggle p {
+    margin-bottom: 0;
+    margin-top: 7px;
+    font-size: 10px;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .dropdown .btn.dropdown-toggle .icon,
+.dialpad-page .content-area .notpad-area .record-area .right-area .dropdown .btn.dropdown-toggle .icon {
+    width: 19px;
+    display: inline-block;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .network-icon,
+.dialpad-page .content-area .notpad-area .record-area .right-area .network-icon {
+    background-color: transparent;
+    border: none;
+    font-size: 11px;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .network-icon .icon,
+.dialpad-page .content-area .notpad-area .record-area .right-area .network-icon .icon {
+    width: 22px;
+    display: block;
+    margin: 0 auto;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .network-icon .icon svg,
+.dialpad-page .content-area .notpad-area .record-area .right-area .network-icon .icon svg {
+    width: 20px;
+    fill: #49aefd;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .network-icon .icon svg path,
+.dialpad-page .content-area .notpad-area .record-area .right-area .network-icon .icon svg path {
+    fill: #49aefd;
+}
+.right-template-company .content-area .note-area .record-area .right-area .dropdown .btn.dropdown-toggle::after,
+.dialpad-page .content-area .notpad-area .record-area .right-area .dropdown .btn.dropdown-toggle::after {
+    position: absolute;
+    top: 50%;
+    right: 1px;
+    font-size: 18px;
+}
+
+.editor-pad {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    zoom: 0.8;
+}
+
+.editor-pad .editor {
+    position: relative;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+.editor-pad.active .editor{
+    display: none;
+}
+.editor-pad .dialpad {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    display: none;
+    border-top: 1px solid #00000030;
+    padding-top: 20px;
+}
+.editor-pad.active .dialpad{
+    display: block;
+}
+.editor-pad .dialpad .footer-area {
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-top: 1px solid #00000030;
+    padding: 10px 0 11px;
+}
+
+.editor-pad .dialpad .footer-area button {
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    color: #49aefd;
+}
+.right-template-company .content-area .note-area.style-two .top-header-sec .left-area h4 .icon,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .left-area h4 .icon{
+    width: 25px;
+    height: 25px;
+    background-color: #01bca7;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.right-template-company .content-area .note-area.style-two .top-header-sec .right-area .close-btn,
+.dialpad-page .content-area .notpad-area .note-area .top-header-sec .right-area .close-btn {
+    background-color: transparent !important;
+    background: none !important;
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: auto;
+    font-size: 14px;
+    color: #000;
+    padding: 0;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area,
+.dialpad-page .content-area .notpad-area .note-area .record-area .label-area{
+    position: relative;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form,
+.dialpad-page .content-area .notpad-area .note-area .record-area .label-area .group-form {
+    display: flex;
+    align-items: center;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form label,
+.dialpad-page .content-area .notpad-area .note-area .record-area .label-area .group-form label {
+    margin-bottom: 0;
+    margin-right: 15px;
+    font-size: 12px;
+}
+.right-template-company .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+.dialpad-page .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+    position: relative;
+    padding: 0;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root .MuiSelect-select,
+.dialpad-page .content-area .notpad-area .note-area .record-area .label-area .group-form  .MuiInputBase-root .MuiSelect-select{
+    padding: 0 35px 0 0;
+    font-size: 11px;
+    border: none !important;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root input,
+.dialpad-page .content-area .notpad-area .note-area .record-area .label-area .group-form  .MuiInputBase-root input {
+    border: none;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root fieldset,
+.dialpad-page .content-area .notpad-area .note-area .record-area .label-area .group-form  .MuiInputBase-root fieldset {
+    border: none;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root .MuiSelect-select em,
+.dialpad-page .content-area .notpad-area .note-area .record-area .label-area .group-form  .MuiInputBase-root .MuiSelect-select em {
+    font-style: normal;
+}
+.dialpad-page .content-area .notpad-area .note-area .editor-pad {
+    zoom: 1;
+}
+
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .dialpad {
+    display: block;
+}
+
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .dialpad .footer-area button {
+    font-size: 14px;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root .MuiSelect-select {
+    padding: 0 35px 0 0;
+    font-size: 11px;
+    border: none !important;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root input {
+    border: none;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root fieldset {
+    border: none;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root .MuiSelect-select em {
+    font-style: normal;
+}
+
+ul.MuiList-root li {
+    background-color: #fff;
+    font-size: 11px;
+}
+
+ul.MuiList-root li.Mui-selected {
+    background-color: #49aefd !important;
+    color: #fff;
+}
+
+ul.MuiList-root li em {
+    font-style: normal;
+}
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiFormControl-root {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiFormControl-root .MuiInputBase-root {
+    border: none;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiFormControl-root .MuiInputBase-root #demo-simple-select-autowidth {
+    border: none;
+    padding: 0;
+    color: #000;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiFormControl-root .MuiInputBase-root input {
+    border: none;
+}
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .MuiInputBase-root {position: relative;}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .dropdown {
+    position: relative;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .dropdown button {
+    background-color: transparent;
+    background: none !important;
+    color: #000;
+    padding: 0;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+}
+
+.right-template-company .content-area .note-area.style-two .record-area .label-area .group-form .dropdown button::after {
+    margin-left: 17px !important;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 15px;
+    width: 100%;
+    border-top: 1px solid #00000030;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area .rating,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .rating {
+    display: flex;
+    align-items: center;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area .rating p,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .rating p {
+    font-size: 14px;
+    margin-right: 15px;
+}
+.dialpad-page .content-area .notpad-area .dial-pad .digits > div.digit .subset{
+    top: -9px;
+}
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area .right-more,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .right-more {
+    position: relative;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area .right-more .dropdown,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .right-more .dropdown{
+    position: relative;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area .right-more .dropdown button,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .right-more .dropdown button{
+    background: none !important;
+    color: #000;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area .right-more .dropdown button::after,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .right-more .dropdown button::after {
+    margin-left: 15px !important;
+}
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .rating label {
+    color: #faaf00;
+}
+.right-template-company .content-area .note-area .editor-pad .editor .new-task-create,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad  .new-task-create{
+    display: flex;
+    border-top: 1px solid #00000030;
+    padding: 10px 15px;
+    align-items: center;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .new-task-create button.btn-style-one,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad  .new-task-create button.btn-style-one{
+    padding: 10px 20px;
+    font-size: 13px;
+    margin-right: 20px;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .new-task-create label,
+.dialpad-page .content-area .notpad-area .note-area .editor-pad  .new-task-create label {
+    margin: 0;
+}
+
+.right-template-company .content-area .note-area .editor-pad .editor .ratings-area .right-more .dropdown .dropdown-menu {
+    transform: translate3d(-77px, -20px, 0px) !important;
+}
+.dialpad-page .content-area .notpad-area .note-area .editor-pad .ratings-area .rating label {
+    color: #faaf00;
+}
+.dialpad-page .note-area {
+    border: 1px solid #00000030;
+    border-radius: 9px;
+    margin-bottom: 30px;
+}
+.right-template-company .content-area .next-back-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    zoom: 0.6;
+}
+.right-template-company .content-area .next-back-area button .tim-icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    position: relative;
+    right: -19px;
+}
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root .MuiSelect-select {
+    padding: 0 35px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root fieldset {
+    border: none;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root .MuiSelect-select em {
+    font-style: normal;
+}
+
+.right-template-company .content-area .next-back-area button .tim-icons.icon-minimal-left {
+    right: auto;
+    left: -21px;
+}
+.right-template-company .content-area .next-back-area button {
+    font-size: 14px;
+    padding: 8px 35px;
+    margin: 0 10px;
+}
+.right-template-company {
+    position: fixed;
+    top: 0;
+    border-radius: 0;
+    max-width: 100% !important;
+    width: 70% !important;
+    margin: 0 !important;
+    left: auto;
+    right: -30%;
+    height: 100vh;
+    margin: 0 !important;
+}
+.right-template-company .modal-body {
+    padding: 20px 0 0;
+}
+.right-template-company .modal-content {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+/* .right-template-company .table-area {
+    max-height: 185px;
+} */
+.right-template-company .content-area .company-info h2 a .icon, 
+.right-template-company .content-area .company-info h4 a .icon,
+.right-template-company .content-area .company-info p .icon {
+    display: inline-block;
+    width: 20px;
+    margin-left: 7px;
+    position: relative;
+    top: -2px;
+    color: #49aefd;
+}
+.right-template-company .content-area .company-info h2 b, .right-template-company .content-area .company-info h4 b, .right-template-company .content-area .company-info p b {
+    margin-right: 5px;
+}
+.right-template-company .content-area .center-content-area {
+    position: relative;
+    max-height: 86vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.right-template-company .content-area .center-content-area::-webkit-scrollbar{
+    width: 0px;
+}
+.right-template-company .content-area .company-info h2 a .icon svg,
+.right-template-company .content-area .company-info h4 a .icon svg,
+.right-template-company .content-area .company-info h4 a .icon svg path,
+.right-template-company .content-area .company-info p .icon svg {
+    fill: #49aefd;
+}
+.right-template-company .table-area table tbody tr td a .icon {
+    display: inline-block;
+}
+
+.right-template-company .table-area table tbody tr td a .icon svg {
+    width: 20px;
+}
+
+.right-template-company .table-area table tbody tr td a .icon {
+    display: inline-block;
+}
+
+.right-template-company .table-area table tbody tr td a .icon svg {
+    width: 20px;
+}
+
+.right-template-company .table-area table tbody tr td .icon {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.right-template-company .table-area table tbody tr td .icon svg {
+    width: 20px;
+    fill: #49aefd;
+}
+
+.right-template-company .table-area table tbody tr td .icon svg path {
+    fill: #49aefd;
+}
+.right-template-company .content-area .company-info p.text-readmore {
+    line-height: 1.5em;
+    height: 3em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;
+}
+
+.right-template-company .content-area .company-info .text-readmore {position: relative;}
+
+.right-template-company .content-area .company-info .text-readmore p {
+    height: 4em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.right-template-company .content-area .company-info .text-readmore .icon-btn {
+    background-color: transparent;
+    border: none;
+    color: #49aefd;
+    transition: all 0.3s ease-in-out;
+}
+
+.right-template-company .content-area .company-info .text-readmore .icon-btn:hover {
+    color: #000;
+}
+
+.right-template-company .content-area .company-info .text-readmore .icon-btn.icon-btn.less-btn {
+    display: none;
+}
+
+.right-template-company .content-area .company-info .text-readmore .icon-btn.show-btn {
+    display: block;
+}
+.right-template-company .content-area .company-info .text-readmore.show p {
+    height: auto;
+    overflow: visible;
+}
+
+.right-template-company .content-area .company-info .text-readmore.show .icon-btn.less-btn {
+    display: block;
+}
+
+.right-template-company .content-area .company-info .text-readmore.show .icon-btn.show-btn {
+    display: none;
+}
+.ReactTable .rt-tbody .rt-td .call-button.btn.btn-primary {
+    background: #40aaf4;
+}
+
+.ReactTable .rt-tbody .rt-td .call-button.btn.btn-primary .MuiSvgIcon-colorPrimary {
+    color: #fff;
+}
+.ReactTable .rt-tbody .rt-td .call-button.btn.btn-primary:hover,
+.ReactTable .rt-tbody .rt-td .call-button.btn.btn-primary:focus{
+    background: #fff !important;
+    background-color: #fff !important;
+    color:#40aaf4 ;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+.ReactTable .rt-tbody .rt-td .call-button.btn.btn-primary:hover .MuiSvgIcon-colorPrimary,
+.ReactTable .rt-tbody .rt-td .call-button.btn.btn-primary:focus .MuiSvgIcon-colorPrimary{
+    color: #40aaf4;
+}
+.ReactTable .rt-tbody .rt-td .icon-table-instaly {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 1rem !important;
+}
+.right-template-company .content-area .note-area .record-area .right-area .voice-area,
+.dialpad-page .content-area .notpad-area .record-area .right-area .voice-area{
+    position: relative;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators,
+.dialpad-page .content-area .notpad-area .record-area .right-area .voice-area #volume-indicators{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+}
+.right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators .volume-indicators-box,
+.dialpad-page .content-area .notpad-area .record-area .right-area .voice-area #volume-indicators .volume-indicators-box{
+    margin-right: 19px;
+    width: 130px;
+}
+.right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators label,
+.dialpad-page .content-area .notpad-area .record-area .right-area .voice-area #volume-indicators label {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators #input-volume,  
+.right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators #output-volume,
+.dialpad-page .content-area .notpad-area .record-area .right-area .voice-area #volume-indicators #input-volume,
+.dialpad-page .content-area .notpad-area .record-area .right-area .voice-area #volume-indicators #output-volume {
+    height: 9px;
+}
+.connect-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.connect-list li {
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+.connect-list li.ringing-color {
+    color: #49aefd;
+}
+
+.connect-list li.connecting-color {
+    color: #fcb22b;
+}
+
+.connect-list li.reconnecting-color {
+    color: #ff3d3d;
+}
+
+.connect-list li.connected-color {
+    color: #5ee15e;
+}
+.dialpad.right-template-company.card {
+    width: 100% !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+.dialpad.right-template-company.card .content-area {
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 1600px) {
+    .editorClassName.rdw-editor-main {
+        min-height: 130px;
+        padding: 0 15px;
+    }
+    /* .right-template-company .table-area {
+        max-height: 138px;
+    } */
+}
+@media (max-width: 1450px) {
+    .right-template-company .table-area table tbody tr td{
+        padding: 5px;
+        font-size: 13px;
+    }
+    .right-template-company .table-area table tbody tr td .call-button {
+        zoom: 0.7;
+    }
+    .editor-pad {
+        zoom: 0.6;
+    }
+    .right-template-company .content-area {
+        position: relative;
+        padding-right: 0;
+        height: 93vh;
+    }
+    .right-template-company .modal-body {
+        padding: 0;
+    }
+}
+@media (max-width: 1250px){
+    .ReactTable .rt-thead .rt-th,
+    .table .rt-tbody .rt-td {
+        font-size: 12px !important;
+        padding: 8px 8px !important;
+    }
+    .ReactTable .rt-tbody .rt-td .call-button svg {
+        width: 10px;
+    }
+    .ReactTable .rt-tbody .rt-td .call-button {
+        font-size: 8px !important;
+    }
+}
+@media (max-width: 991px) {
+    .right-template-company{
+        width: 90% !important;
+        right: -10%;
+    }
+}
+
+@media (max-width: 700px){
+    .right-template-company .content-area .next-back-area {
+        zoom: 0.5;
+        flex-wrap: wrap;
+    }
+    .right-template-company .content-area .next-back-area .skip-task {
+        width: 100%;
+        text-align: center;
+        padding: 13px;
+        position: absolute;
+        top: -64px;
+    }
+    .right-template-company .table-area table {
+        width: 868px;
+        border-radius: 11px;
+        border: 1px solid rgba(0,0,0,0.02);
+    }
+    .right-template-company .table-area {
+        margin: 20px 0;
+        position: relative;
+        zoom: 0.6;
+        width: 100%;
+        overflow-y: scroll;
+    }
+    .right-template-company .content-area .note-area .record-area{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators .volume-indicators-box{
+        width: 90px;
+    }
+}
+
+@media (max-width: 490px){
+    .right-template-company{
+        height: 107%;
+    }
+    .right-template-company .content-area {
+        padding-bottom: 18px;
+    }
+    .right-template-company .content-area .next-back-area {
+        zoom: 0.5;
+        flex-wrap: wrap;
+        bottom: -67px;
+    }
+    .right-template-company .content-area .note-area .record-area .right-area{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .right-template-company .content-area .note-area .record-area .right-area .voice-area{
+        margin: 0px 0 20px;
+    }
+    .right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators{
+        margin-top: 0;
+    }
+    .right-template-company .content-area .note-area .record-area .right-area .voice-area #volume-indicators .volume-indicators-box {
+        margin-right: 19px;
+        width: 50%;
+    }
+}
+
+@media (max-width: 490px){
+    .right-template-company{
+        height: 117%;
+    }
+    .right-template-company .content-area {
+        padding-bottom: 28px;
+    }
+    .right-template-company .content-area .next-back-area {
+        zoom: 0.5;
+        flex-wrap: wrap;
+        bottom: -107px;
+    }
+}
+
+

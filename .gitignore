@@ -1,0 +1,13 @@
+node_modules
+.parcel-cache
+package-lock.json
+build
+.env
+.env.production
+.env.development
+
+.DS_Store
+
+server/userData
+
+lists
