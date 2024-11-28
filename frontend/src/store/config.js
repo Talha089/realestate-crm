@@ -1,7 +1,7 @@
 // import io from 'socket.io-client';
 
 /* -- set app title --*/
-const AppTitle = 'DASHBOARD REMOTE JOB LAB';
+const AppTitle = 'DASHBOARD REAL ESTATE CRM';
 
 /* -- set app mode -- */
 const AppMode = [''];

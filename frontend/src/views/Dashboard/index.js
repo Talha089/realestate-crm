@@ -1,7 +1,7 @@
 import CountUp from 'react-countup';
 import { connect } from 'react-redux';
 import React, { useEffect } from "react";
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import VisibilitySensor from 'react-visibility-sensor';
 import { Card, CardHeader, CardBody, CardTitle, Row, Col, } from "reactstrap";
 
@@ -19,12 +19,8 @@ const Dashboard = (props) => {
   }, [])
 
   let { total_jobs,
-    platform_job_stats,
-    total_leads,
     new_leads,
     contacted_leads,
-    qualified_leads,
-    lost_leads,
     closed_leads,
     leads_stats_0,
     leads_stats_1

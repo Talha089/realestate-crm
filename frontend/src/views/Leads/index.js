@@ -1,30 +1,26 @@
 
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { Row, Card, CardHeader, CardBody, CardTitle } from "reactstrap";
-import moment from 'moment';
+import { Row, Card, CardHeader, CardBody, CardTitle , Modal, ModalBody, ModalHeader} from "reactstrap";
 
 import "./index.css"
+
 import ReactTable from 'react-table-6';
 import { withRouter } from 'react-router-dom';
-import SendIcon from '@material-ui/icons/Send';
-import { Modal, ModalBody, ModalHeader } from "reactstrap";
-import ContactsIcon from '@material-ui/icons/Contacts';
-import EventAvailableIcon from '@material-ui/icons/EventAvailable';
-import PhoneIcon from '@material-ui/icons/Phone';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import Button from '@material-ui/core/Button';
 
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import PhoneIcon from '@material-ui/icons/Phone';
 import MenuItem from '@material-ui/core/MenuItem';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
-import { createLead, getLeads, updateLead, deleteLead } from '../../store/actions/Integration';
+import moment from 'moment';
+
+import { createLead, getLeads, updateLead, deleteLead } from '../../store/actions/Leads';
 
 
 
-const Integrations = () => {
+const Leads = () => {
   const dispatch = useDispatch();
   const { leads } = useSelector((state) => state['Integration']);
 
@@ -408,4 +404,4 @@ const Integrations = () => {
   );
 };
 
-export default withRouter(Integrations);
+export default withRouter(Leads);

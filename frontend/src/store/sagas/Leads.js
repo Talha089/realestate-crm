@@ -2,7 +2,7 @@ import axios from 'axios';
 import EventBus from 'eventing-bus';
 import { all, takeEvery, call, put } from 'redux-saga/effects';
 
-import { setLeads } from '../actions/Integration';
+import { setLeads } from '../actions/Leads';
 
 
 /* Leads */

@@ -1,7 +1,7 @@
 import Users from "./views/Users/index.js";
 import Logout from "./views/Logout/index.js";
 import Dashboard from "./views/Dashboard/index.js";
-import Integrations from "./views/Integrations/index.js";
+import Leads from "./views/Leads/index.js";
 
 let routes = [{
   path: "/",
@@ -17,8 +17,8 @@ let routes = [{
 },   {
   layout: "/home",
   path: "/integrations",
-  name: "Integrations",
-  component: Integrations,
+  name: "Leads",
+  component: Leads,
   icon: "tim-icons icon-puzzle-10",
 },  {
   layout: "/home",
