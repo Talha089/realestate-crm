@@ -5,6 +5,6 @@
 module.exports = {
 	// Server port
 	port: 4000,
-	server: "https://server.dripple.uk",
-	clientDomain: 'https://portal.remotejoblab.com',
+	server: "http://localhost:4000",
+	clientDomain: 'http://localhost:4000',
 };

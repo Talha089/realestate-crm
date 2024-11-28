@@ -98,7 +98,7 @@ class AdminNavbar extends React.Component {
                   <span className="navbar-toggler-bar bar3" />
                 </button>
               </div>
-              <NavbarBrand className="mt-2" href="https://remotejoblab.com/" target="_blank">
+              <NavbarBrand className="mt-2" href="#" target="_blank">
                 <img alt="..." src={require('../../assets/img/logo.png')} style={{ width: '10%'}} />
               </NavbarBrand>
             </div>

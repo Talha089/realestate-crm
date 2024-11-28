@@ -5,6 +5,6 @@
 module.exports = {
 	// Server port
 	port: 4000,
-	server: "https://remotejoblab.us",
-	clientDomain: 'https://portal.remotejoblab.com',
+	server: "https://realestate.us",
+	clientDomain: 'https://realestate.com',
 };

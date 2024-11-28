@@ -22,9 +22,8 @@ const all = {
 
   project_name: 'CRM',
   support_title: 'Support Team',
-  // mail_from_email: 'do-not-reply@remotejoblab.com',
   mail_from_email: 'do-not-reply@crm.co.uk',
-  mail_from_name: 'remotejoblab',
+  mail_from_name: 'real-estate',
   mail_logo: 'https://www.crm.co.uk/logo.png',
 
   encPass: 's1XrWeMEc2aJn1tu5HMp',
