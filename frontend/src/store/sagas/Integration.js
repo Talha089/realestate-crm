@@ -103,7 +103,6 @@ function* callTaskCompleted({ payload }) {
 
 /* Leads */
 function* createLeads({ payload }) {
-    console.log('*******createLeads payload', payload)
     yield put({ type: 'SET_LOADING', payload: true });
     const { error, response } = yield call(postCall, { path: '/leads/leads', payload });
     if (error) EventBus.publish("error", error['response']['data']['message']);
@@ -123,7 +122,6 @@ function* getLeads() {
 };
 
 function* setLead({ payload }) {
-    console.log('**** setLeadsaga', payload);
     yield put({ type: 'SET_LOADING', payload: true });
     const { error, response } = yield call(putCall, { path: `/leads/leads/${payload['_id']}`, payload });
     if (error) EventBus.publish("error", error['response']['data']['message']);
@@ -133,6 +131,19 @@ function* setLead({ payload }) {
     }
     yield put({ type: 'SET_LOADING', payload: false });
 };
+
+
+function* removeLead({ payload }) {
+    yield put({ type: 'SET_LOADING', payload: true });
+    console.log(`******** payload`, payload);
+    const { error, response } = yield call(deleteCall, `/leads/leads/${payload['_id']}`);
+    if (error) EventBus.publish("error", error['response']['data']['message']);
+    else if (response) {
+        yield put({ type: 'GET_LEADS' });
+        EventBus.publish("success", response['data']['message']);
+    }
+    yield put({ type: 'SET_LOADING', payload: false });
+}
 
 
 
@@ -156,6 +167,8 @@ function* actionWatcher() {
     yield takeEvery('CREATE_LEAD', createLeads);
     yield takeEvery('GET_LEADS', getLeads);
     yield takeEvery('SET_LEAD', setLead);
+    yield takeEvery('DELETE_LEAD', removeLead);
+
 
 
 

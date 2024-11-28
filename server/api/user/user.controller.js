@@ -61,3 +61,12 @@ exports.signIn = async (req, res) => {
 
     } catch (error) { errReturned(res, error) }
 }
+
+
+/**
+ * Get All Users
+ */
+exports.getAllUsers = async (req, res) => {
+    const users = await User.find().lean()
+    sendResponse(res, SUCCESS, 'Success', users);
+  }

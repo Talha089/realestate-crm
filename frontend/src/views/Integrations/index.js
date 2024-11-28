@@ -19,19 +19,20 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
-import { createLead, getLeads, updateLead } from '../../store/actions/Integration';
+import { createLead, getLeads, updateLead, deleteLead } from '../../store/actions/Integration';
 
 
 
 const Integrations = () => {
   const dispatch = useDispatch();
-  const { campaigns, lists, leads } = useSelector((state) => state['Integration']);
+  const { leads } = useSelector((state) => state['Integration']);
 
   const leadStatus = ['New', 'Contacted', 'Qualified', 'Lost', 'Closed'];
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+
   const [isEditMode, setIsEditMode] = useState(false); // Track if modal is in edit mode
-  const [campaign, setCampaign] = useState('New');
 
   const [formData, setFormData] = useState({
     _id: '',
@@ -73,17 +74,36 @@ const Integrations = () => {
     setModalOpen(true);
   };
 
+  const openDeleteModal = (row) => {
+    const { name, email, phone, status, _id } = row._original;
+    setFormData({ name, email, phone, status, _id }); // Populate form data
+    // setIsEditMode(true); // Switch to edit mode
+    setDeleteModalOpen(true);
+  }
+
   const submitForm = async () => {
     if (isEditMode) {
       console.log('*** Editing Lead', formData);
       // Dispatch update action here (updateLead should be defined in your actions)
-      await dispatch(updateLead(formData));
+      dispatch(updateLead(formData));
     } else {
       console.log('*** Creating New Lead', formData);
       dispatch(createLead(formData));
     }
     setModalOpen(false);
   };
+
+  const confirmDeleteHandler = async () => {
+    console.log('*** Deleting Lead', formData);
+    dispatch(deleteLead(formData));
+    setDeleteModalOpen(false);
+  }
+
+  const cancelDeleteHandler = async () => {
+    setDeleteModalOpen(false);
+    
+  }
+
 
   const instantlyCampaignColumns = [
     {
@@ -122,9 +142,7 @@ const Integrations = () => {
             Edit
           </Button>
           <Button
-            onClick={() => console.log('Delete', row._original)}
-            variant="outlined"
-            color="primary"
+            onClick={() => openDeleteModal(row)} variant="outlined" color="primary"
             className="delete-button"
           >
             Delete
@@ -158,7 +176,7 @@ const Integrations = () => {
           </CardBody>
         </Card>
       </Row>
-
+      {/* Create Edit Modal */}
       <Modal isOpen={modalOpen} className={`main-modal new-user-modal`}>
         <ModalHeader toggle={() => setModalOpen(!modalOpen)}>
           {isEditMode ? 'Edit Lead' : 'Create New Lead'}
@@ -248,6 +266,107 @@ const Integrations = () => {
                 <div className="col-12">
                   <div className="group-form text-center">
                     <button className="btn-style-one">{isEditMode ? 'Update' : 'Submit'}</button>
+                  </div>
+                </div>
+              </div>
+            </ValidatorForm>
+          </div>
+        </ModalBody>
+      </Modal>
+
+      {/* Delete Modal */}
+
+
+      <Modal isOpen={deleteModalOpen} className={`main-modal new-user-modal`}>
+        <ModalHeader toggle={() => setDeleteModalOpen(!deleteModalOpen)}>
+          <h3>Are you sure you want to delete this lead ?</h3>
+        </ModalHeader>
+        <ModalBody>
+          <div className="content-area">
+            <ValidatorForm className="validator-form mt-4" >
+              <div className="row">
+                {/* Name and Email */}
+                <div className="col-lg-6 col-md-6">
+                  <div className="group-form">
+                    <label>Name</label>
+                    <TextValidator
+                      className="login-input-fields"
+                      type="text"
+                      name="name"
+                      margin="dense"
+                      variant="outlined"
+                      placeholder="Enter your name"
+                      // onChange={handleInputChange}
+                      value={formData.name}
+                      validators={['required']}
+                      errorMessages={['Name cannot be empty']}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="group-form">
+                    <label>Email</label>
+                    <TextValidator
+                      className="login-input-fields"
+                      type="text"
+                      name="email"
+                      margin="dense"
+                      variant="outlined"
+                      placeholder="Enter your email"
+                      // onChange={handleInputChange}
+                      value={formData.email}
+                      validators={['required', 'isEmail']}
+                      errorMessages={['Email cannot be empty', 'Email is not valid']}
+                    />
+                  </div>
+                </div>
+
+                {/* Phone and Status */}
+                <div className="col-lg-6 col-md-6">
+                  <div className="group-form">
+                    <label>Phone</label>
+                    <TextValidator
+                      className="login-input-fields"
+                      type="text"
+                      name="phone"
+                      margin="dense"
+                      variant="outlined"
+                      placeholder="Enter your phone number"
+                      // onChange={handleInputChange}
+                      value={formData.phone}
+                      validators={['required']}
+                      errorMessages={['Phone number cannot be empty']}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="group-form">
+                    <label>Status</label>
+                    <Select
+                      name="status"
+                      id="instantly-status"
+                      placeholder="Select status"
+                      value={formData.status}
+                    // onChange={(e) =>
+                    //   setFormData((prev) => ({ ...prev, status: e.target.value }))
+                    // }
+                    >
+                      {leadStatus.map((status) => (
+                        <MenuItem value={status} key={status}>
+                          <span className={`${status.toLowerCase()}-status font-bold`}>
+                            {status.toUpperCase()}
+                          </span>
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <div className="col-12">
+                  <div className="group-form text-center">
+                    <button className="btn-style-one" onClick={confirmDeleteHandler}>{"Yes"}</button>
+                    <button className="btn-style-one" onClick={cancelDeleteHandler}>{"No"}</button>
                   </div>
                 </div>
               </div>

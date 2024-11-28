@@ -93,3 +93,10 @@ export const updateLead = (data) => ({
     payload: data
 });
 
+export const deleteLead = (data) => ({
+    type: 'DELETE_LEAD',
+    payload: data
+});
+
+
+
