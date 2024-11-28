@@ -21,19 +21,7 @@ let routes = [{
   name: "Integrations",
   component: Integrations,
   icon: "tim-icons icon-puzzle-10",
-}, {
-  layout: "/home",
-  path: "/users",
-  name: "Users",
-  component: Users,
-  icon: "tim-icons icon-user-run",
-}, {
-  layout: "/home",
-  path: "/settings",
-  name: "Setting",
-  component: Settings,
-  icon: "tim-icons icon-settings-gear-63",
-}, {
+},  {
   layout: "/home",
   path: "/logout",
   name: "Logout",

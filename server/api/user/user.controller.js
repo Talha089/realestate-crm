@@ -42,7 +42,7 @@ exports.signUp = async (req, res) => {
 
 /**
     * USER SIGN IN 
- */
+ */ 
 
 exports.signIn = async (req, res) => {
     try {

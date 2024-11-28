@@ -83,18 +83,15 @@ const Integrations = () => {
 
   const submitForm = async () => {
     if (isEditMode) {
-      console.log('*** Editing Lead', formData);
       // Dispatch update action here (updateLead should be defined in your actions)
       dispatch(updateLead(formData));
     } else {
-      console.log('*** Creating New Lead', formData);
       dispatch(createLead(formData));
     }
     setModalOpen(false);
   };
 
   const confirmDeleteHandler = async () => {
-    console.log('*** Deleting Lead', formData);
     dispatch(deleteLead(formData));
     setDeleteModalOpen(false);
   }
@@ -138,15 +135,15 @@ const Integrations = () => {
       filterable: false,
       Cell: ({ row }) => (
         <>
-          <Button onClick={() => openEditModal(row)} variant="outlined" color="primary">
-            Edit
-          </Button>
-          <Button
-            onClick={() => openDeleteModal(row)} variant="outlined" color="primary"
-            className="delete-button"
+          <button onClick={() => openEditModal(row)} variant="outlined" color="primary" className='mx-1 view-btn user-view-btn'>
+          <i className='tim-icons icon-pencil' />
+          </button>
+          <button
+            onClick={() => openDeleteModal(row)} variant="outlined" color="primary" className="mx-1 delete-btn" 
+            
           >
-            Delete
-          </Button>
+              <i className="fa fa-trash success px-2" aria-hidden="true"></i>
+          </button>
         </>
       ),
     },
