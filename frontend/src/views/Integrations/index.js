@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Row, Card, CardHeader, CardBody, CardTitle } from "reactstrap";
+import moment from 'moment';
 
 import "./index.css"
 import ReactTable from 'react-table-6';
@@ -151,6 +152,13 @@ const Integrations = () => {
       id: 'status',
       Header: 'Status',
       accessor: (lead) => lead['status'] || '-',
+    },
+    {
+      minWidth: 100,
+      id: 'time',
+      Header: 'Date',
+      accessor: (lead) => moment(lead['createdAt']).format('YYYY-MM-DD')
+
     },
     {
       id: 'edit',
