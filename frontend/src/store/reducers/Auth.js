@@ -21,21 +21,7 @@ var initialState =
 
 
     total_jobs: 2500,
-    total_users: 0,
-    total_tasks: 0,
-    totalDeposits: 1,
-    totalWithdrawals: 1,
-    job_stats: null,
-    applied_job_stats: null,
-    platform_job_stats: null,
-    TotalJob: {
-      labels: ["15 - August", "16 - August", "17 - August", "18 - August", "19 - August", "20 - August", "21 - August", "22 - August", "23 - August", "24 - August", "25 - August",],
-      data: [1, 6, 22, 11, 60, 202, 110, 40, 102, 1, 140,],
-    },
-    TotalApplys: {
-      labels: ["16 - August", "17 - August", "20 - August",],
-      data: [8, 40, 8,],
-    },
+    
   },
 }
 

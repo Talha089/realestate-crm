@@ -44,57 +44,11 @@ function* getDashboardStats() {
   else if (response) yield put({ type: "SET_DASHBOARD_STATS", payload: response['data']['body'] });
 };
 
-function* getMe() {
-  const { error, response } = yield call(getCall, '/user/myProfile');
-  if (!error && response) {
-    yield put({ type: "SET_USER_DETAILS", payload: response['data']['body'] });
-  };
-}
-
-function* resetPassword({ payload }) {
-  const { formData, successCallback, failCallback } = payload;
-  const { error, response } = yield call(postCall, { path: '/user/setPassword', payload: formData });
-  if (error) {
-    failCallback()
-    EventBus.publish("error", error['response']['data']['message']);
-  }
-  else if (response) {
-    EventBus.publish("success", response['data']['message'])
-    successCallback();
-  }
-};
-
-function* forgotPassword({ payload }) {
-  const { formData, successCallback, failCallback } = payload;
-  const { error, response } = yield call(postCall, { path: '/user/forgotPassword', payload: formData });
-  if (error) {
-    failCallback()
-    EventBus.publish("error", error['response']['data']['message']);
-  } else if (response) successCallback();
-};
-function* changePassword({ payload }) {
-  const { formData, successCallback, failCallback } = payload;
-  const { error, response } = yield call(postCall, { path: '/user/changePassword', payload: formData });
-  if (error) {
-    failCallback()
-    EventBus.publish("error", error['response']['data']['message']);
-  } else if (response) successCallback();
-};
-
-
-
-
 
 
 function* actionWatcher() {
   yield takeEvery('LOGIN', login);
   yield takeEvery('SIGN_UP', signup);
-
-
-  yield takeEvery('GET_ME', getMe);
-  yield takeEvery('RESET_PASSWORD', resetPassword);
-  yield takeEvery('CHANGE_PASSWORD', changePassword);
-  yield takeEvery('FORGOT_PASSWORD', forgotPassword);
   yield takeEvery('GET_DASHBOARD_STATS', getDashboardStats);
 
 }
