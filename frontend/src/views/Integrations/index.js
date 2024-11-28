@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,113 +19,120 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
-import { createLead, getLeads } from '../../store/actions/Integration';
+import { createLead, getLeads, updateLead } from '../../store/actions/Integration';
 
 
 
 const Integrations = () => {
-
   const dispatch = useDispatch();
-  const { campaigns, lists, leads } = useSelector(state => state['Integration']);
+  const { campaigns, lists, leads } = useSelector((state) => state['Integration']);
 
-  const leadStatus = ['New', 'Contacted', 'Qualified', "Lost", "Closed"];
+  const leadStatus = ['New', 'Contacted', 'Qualified', 'Lost', 'Closed'];
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [list, setList] = useState({});
+  const [isEditMode, setIsEditMode] = useState(false); // Track if modal is in edit mode
   const [campaign, setCampaign] = useState('New');
 
   const [formData, setFormData] = useState({
+    _id: '',
     name: '',
     email: '',
     phone: '',
     status: 'New',
   });
 
-
   useEffect(() => {
-    if (leads) console.log('**** leads', leads)
-  }, [leads])
-
-  useEffect(() => {
-    dispatch(getLeads())
-  }, [])
-
+    dispatch(getLeads());
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
-
-
-  const instantlyCampaignColumns = [{
-    minWidth: 200,
-    Header: 'Lead Name',
-    id: 'lead_name',
-    accessor: lead => lead['name'] || '-'
-  }, {
-    minWidth: 100,
-    id: 'email_leads',
-    Header: 'Email',
-    accessor: lead => <><ContactsIcon className='icon-table-instaly' color="primary" /> &nbsp; {lead['email'] || 0}</>
-  }, {
-    minWidth: 100,
-    id: 'phone',
-    Header: 'Phone',
-    accessor: lead => <><PhoneIcon className='icon-table-instaly' color="primary" /> &nbsp; {lead['phone'] || 0}</>
-  },
-  {
-    minWidth: 100,
-    id: 'Date',
-    Header: 'Created At',
-    accessor: lead => <><EventAvailableIcon className='icon-table-instaly' color="primary" /> &nbsp; {lead['createdAt'] || 0}</>
-  },
-
-  {
-    id: 'status',
-    minWidth: 100,
-    Header: 'Status',
-    accessor: campaign =>
-      <div className='content-area'>
-        <button className={`status-btn ${campaign['status'].toLowerCase()}-btn`}>{campaign['status'].toUpperCase()}</button>
-      </div>,
-    filterable: false,
-  },
-  {
-    id: 'edit',
-    Header: '',
-    filterable: false,
-    Cell: ({ row }) => (
-      <>
-        <Button onClick={() => editRow(row)} variant="outlined" color="primary">Edit</Button>
-        <Button onClick={() => deleteRow(row)} variant="outlined" color="primary" className='delete-button'>Delete</Button>
-      </>
-    )
-
-  },
-  ];
-
-
-  const editRow = async (row) => {
-    const { name, email, phone, status, createdAt } = row._original;
-    // setState({ ...state, name, phone, email, status });
-    setFormData(name, email, phone, status)
-    dispatch(toggleEditAllowistModal(true));
+  const openCreateModal = () => {
+    setIsEditMode(false); // Switch to create mode
+    setFormData({
+      _id: '',
+      name: '',
+      email: '',
+      phone: '',
+      status: 'New'
+    }); // Reset form data
+    setModalOpen(true);
   };
 
-
-  const handleButton = () => {
+  const openEditModal = (row) => {
+    console.log('**** openEditModal', row)
+    const { name, email, phone, status, _id } = row._original;
+    setFormData({ name, email, phone, status, _id }); // Populate form data
+    setIsEditMode(true); // Switch to edit mode
     setModalOpen(true);
   };
 
   const submitForm = async () => {
-    console.log('*** submitForm called', formData)
-    await dispatch(createLead(formData));
-  }
+    if (isEditMode) {
+      console.log('*** Editing Lead', formData);
+      // Dispatch update action here (updateLead should be defined in your actions)
+      await dispatch(updateLead(formData));
+    } else {
+      console.log('*** Creating New Lead', formData);
+      dispatch(createLead(formData));
+    }
+    setModalOpen(false);
+  };
 
+  const instantlyCampaignColumns = [
+    {
+      minWidth: 200,
+      Header: 'Lead Name',
+      id: 'lead_name',
+      accessor: (lead) => lead['name'] || '-',
+    },
+    {
+      minWidth: 100,
+      id: 'email_leads',
+      Header: 'Email',
+      accessor: (lead) => (
+        <>
+          <ContactsIcon className="icon-table-instaly" color="primary" /> &nbsp; {lead['email'] || 0}
+        </>
+      ),
+    },
+    {
+      minWidth: 100,
+      id: 'phone',
+      Header: 'Phone',
+      accessor: (lead) => (
+        <>
+          <PhoneIcon className="icon-table-instaly" color="primary" /> &nbsp; {lead['phone'] || 0}
+        </>
+      ),
+    },
+    {
+      id: 'edit',
+      Header: '',
+      filterable: false,
+      Cell: ({ row }) => (
+        <>
+          <Button onClick={() => openEditModal(row)} variant="outlined" color="primary">
+            Edit
+          </Button>
+          <Button
+            onClick={() => console.log('Delete', row._original)}
+            variant="outlined"
+            color="primary"
+            className="delete-button"
+          >
+            Delete
+          </Button>
+        </>
+      ),
+    },
+  ];
 
   return (
     <>
@@ -133,9 +141,7 @@ const Integrations = () => {
           <CardHeader>
             <CardTitle tag="h3" style={{ margin: 20 }}>
               <div tag="h2">Instantly Campaigns</div>
-              <button className="btn-style-one" onClick={() =>
-                handleButton()
-              } >
+              <button className="btn-style-one" onClick={openCreateModal}>
                 Create New Lead
               </button>
             </CardTitle>
@@ -147,20 +153,22 @@ const Integrations = () => {
               filterable={true}
               data={leads || []}
               columns={instantlyCampaignColumns}
-              resolveData={leads => leads ? leads.map(row => row) : []}
+              resolveData={(leads) => (leads ? leads.map((row) => row) : [])}
             />
           </CardBody>
         </Card>
       </Row>
 
       <Modal isOpen={modalOpen} className={`main-modal new-user-modal`}>
-        <ModalHeader toggle={() => setModalOpen(!modalOpen)}></ModalHeader>
+        <ModalHeader toggle={() => setModalOpen(!modalOpen)}>
+          {isEditMode ? 'Edit Lead' : 'Create New Lead'}
+        </ModalHeader>
         <ModalBody>
-          <div className='content-area'>
-            <ValidatorForm className="validator-form mt-4" onSubmit={() => submitForm()}>
-              <div className='row'>
-                {/* First Row: Name and Email */}
-                <div className='col-lg-6 col-md-6'>
+          <div className="content-area">
+            <ValidatorForm className="validator-form mt-4" onSubmit={submitForm}>
+              <div className="row">
+                {/* Name and Email */}
+                <div className="col-lg-6 col-md-6">
                   <div className="group-form">
                     <label>Name</label>
                     <TextValidator
@@ -170,15 +178,14 @@ const Integrations = () => {
                       margin="dense"
                       variant="outlined"
                       placeholder="Enter your name"
-                      onChange={(e) => handleInputChange(e)}
+                      onChange={handleInputChange}
                       value={formData.name}
                       validators={['required']}
                       errorMessages={['Name cannot be empty']}
                     />
                   </div>
                 </div>
-
-                <div className='col-lg-6 col-md-6'>
+                <div className="col-lg-6 col-md-6">
                   <div className="group-form">
                     <label>Email</label>
                     <TextValidator
@@ -188,7 +195,7 @@ const Integrations = () => {
                       margin="dense"
                       variant="outlined"
                       placeholder="Enter your email"
-                      onChange={(e) => handleInputChange(e)}
+                      onChange={handleInputChange}
                       value={formData.email}
                       validators={['required', 'isEmail']}
                       errorMessages={['Email cannot be empty', 'Email is not valid']}
@@ -196,8 +203,8 @@ const Integrations = () => {
                   </div>
                 </div>
 
-                {/* Second Row: Phone and Status */}
-                <div className='col-lg-6 col-md-6'>
+                {/* Phone and Status */}
+                <div className="col-lg-6 col-md-6">
                   <div className="group-form">
                     <label>Phone</label>
                     <TextValidator
@@ -207,44 +214,40 @@ const Integrations = () => {
                       margin="dense"
                       variant="outlined"
                       placeholder="Enter your phone number"
-                      onChange={(e) => handleInputChange(e)}
+                      onChange={handleInputChange}
                       value={formData.phone}
                       validators={['required']}
                       errorMessages={['Phone number cannot be empty']}
                     />
                   </div>
                 </div>
-
-                <div className='col-lg-6 col-md-6'>
+                <div className="col-lg-6 col-md-6">
                   <div className="group-form">
-                    <div></div>
                     <label>Status</label>
                     <Select
-                      name='campaign'
-                      id='instantly-campaign'
-                      placeholder='Search your campaign'
-                      labelId='instantly-campaign-label'
-                      value={campaign}
-                      onChange={(e) => setCampaign(e['target']['value'])}
+                      name="status"
+                      id="instantly-status"
+                      placeholder="Select status"
+                      value={formData.status}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, status: e.target.value }))
+                      }
                     >
-                      {leadStatus.length > 0 && leadStatus.map(campaign =>
-                        <MenuItem value={campaign}
-                          className='text-center'>
-                          {/* {campaign} &nbsp; - &nbsp; */}
-                          <span className={`${campaign}-status font-bold`}>
-                            {campaign.toUpperCase()}</span>
-                        </MenuItem>)
-                      };
+                      {leadStatus.map((status) => (
+                        <MenuItem value={status} key={status}>
+                          <span className={`${status.toLowerCase()}-status font-bold`}>
+                            {status.toUpperCase()}
+                          </span>
+                        </MenuItem>
+                      ))}
                     </Select>
                   </div>
                 </div>
 
                 {/* Submit Button */}
-                <div className='col-12'>
+                <div className="col-12">
                   <div className="group-form text-center">
-                    <button className="btn-style-one" >
-                      Submit
-                    </button>
+                    <button className="btn-style-one">{isEditMode ? 'Update' : 'Submit'}</button>
                   </div>
                 </div>
               </div>
@@ -252,8 +255,6 @@ const Integrations = () => {
           </div>
         </ModalBody>
       </Modal>
-
-
     </>
   );
 };

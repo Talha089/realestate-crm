@@ -87,3 +87,9 @@ export const setLeads = (data) => ({
     type: 'SET_LEADS',
     payload: data
 });
+
+export const updateLead = (data) => ({
+    type: 'SET_LEAD',
+    payload: data
+});
+

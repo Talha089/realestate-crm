@@ -122,6 +122,19 @@ function* getLeads() {
     yield put({ type: 'SET_LOADING', payload: false });
 };
 
+function* setLead({ payload }) {
+    console.log('**** setLeadsaga', payload);
+    yield put({ type: 'SET_LOADING', payload: true });
+    const { error, response } = yield call(putCall, { path: `/leads/leads/${payload['_id']}`, payload });
+    if (error) EventBus.publish("error", error['response']['data']['message']);
+    else if (response) {
+        yield put({ type: 'GET_LEADS' });
+        EventBus.publish("success", response['data']['message']);
+    }
+    yield put({ type: 'SET_LOADING', payload: false });
+};
+
+
 
 
 function* actionWatcher() {
@@ -142,6 +155,8 @@ function* actionWatcher() {
 
     yield takeEvery('CREATE_LEAD', createLeads);
     yield takeEvery('GET_LEADS', getLeads);
+    yield takeEvery('SET_LEAD', setLead);
+
 
 
 }
