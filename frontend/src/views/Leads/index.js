@@ -22,7 +22,7 @@ import { createLead, getLeads, updateLead, deleteLead } from '../../store/action
 
 const Leads = () => {
   const dispatch = useDispatch();
-  const { leads } = useSelector((state) => state['Integration']);
+  const { leads } = useSelector((state) => state['Leads']);
 
   const leadStatus = ['New', 'Contacted', 'Qualified', 'Lost', 'Closed'];
 
